@@ -1,5 +1,6 @@
 body {
   background: #F7F7F7;
+  overflow-x: hidden;
 
   .container {
     max-width: px-to-rem(1200);
@@ -7,6 +8,7 @@ body {
 }
 .main {
   margin-bottom: px-to-rem(50);
+  position: relative;
 
   .container {
     display: flex;
@@ -388,6 +390,21 @@ body {
     }
   }
 
+  // Decor
+  .decor {
+    pointer-events: none;
+    user-select: none;
+
+    z-index: -1;
+    position: absolute;
+  }
+  .decor-1 {
+    left: px-to-rem(-120);
+  }
+  .decor-2 {
+    top: 0;
+    right: px-to-rem(-50);
+  }
 }
 
 // Responsive
@@ -578,6 +595,13 @@ body {
     // Order
     .order-box {
       width: 39%;
+    }
+  }
+}
+@media screen and (min-width: breakpoint(extra-small)) and (max-width: breakpoint(medium-max)) {
+  .main {
+    .decor-1 {
+      right: px-to-rem(-100);
     }
   }
 }
