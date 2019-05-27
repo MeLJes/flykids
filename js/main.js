@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
       totalPrice: 0
     }
     // let multiplier = 200;
-    let plusButton = document.querySelectorAll('.plus');
-    let minusButton = document.querySelectorAll('.minus');
+    let plusButtons = document.querySelectorAll('.plus');
+    let minusButtons = document.querySelectorAll('.minus');
 
     // --- Functions
     function _render() {
@@ -63,27 +63,40 @@ document.addEventListener('DOMContentLoaded', function () {
         field.innerHTML = orderHolder.totalPrice
       });
     }
-    plusButton.forEach(function (button) {
+    plusButtons.forEach(function (button) {
       button.addEventListener('click', function () {
-        let input = this.previousElementSibling;
-        let inputName = input.name;
+        let input = this.previousElementSibling.name;
 
-        orderHolder[inputName]++;
+        orderHolder[input]++;
         _render();
+
+
+
+
+        console.log(input);
+        let inputs = document.getElementsByClassName(input);
+        console.log(inputs);
+
+        for (let input in inputs) {
+          // input.previousElementSibling.classList.remove('inactive');
+          console.log(input.input);
+        }
+
+
+/*
 
         let minusButton = input.previousElementSibling;
         if (input.value > 0) {
           minusButton.classList.remove('inactive');
-        }
+        }*/
       })
     });
 
-    minusButton.forEach(function (button) {
+    minusButtons.forEach(function (button) {
       button.addEventListener('click', function () {
-        let input = this.nextElementSibling;
-        let inputName = input.name;
+        let input = this.nextElementSibling.name;
 
-        orderHolder[inputName]--;
+        orderHolder[input]--;
         _render();
 
         if (input.value == 0) {
