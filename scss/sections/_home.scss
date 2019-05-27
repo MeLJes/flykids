@@ -6,15 +6,13 @@ body {
     max-width: px-to-rem(1200);
   }
   .header,
-  .main,
-  .order-box {
+  .main {
     @include tr;
   }
   // Loader
   &.loading {
     .header,
-    .main,
-    .order-box {
+    .main {
       opacity: 0;
       pointer-events: none;
       user-select: none;
@@ -22,8 +20,7 @@ body {
   }
   &.loaded {
     .header,
-    .main,
-    .order-box {
+    .main{
       opacity: 1;
       pointer-events: auto;
       user-select: auto;
@@ -62,7 +59,7 @@ body {
       }
     }
     img {
-      width: px-to-rem(55);
+      width: px-to-rem(55); //75
     }
     h2,
     .price,
@@ -75,6 +72,7 @@ body {
     .price {
       font-size: px-to-rem(14);
       font-weight: weight(medium);
+      line-height: 1.6;
       max-width: px-to-rem(160);
     }
     .counter {
@@ -623,10 +621,50 @@ body {
     }
   }
 }
+@media screen and (min-width: breakpoint(medium)) and (max-width: breakpoint(medium-max)) {
+  .main {
+    .persons-count {
+      .item {
+        padding: px-to-rem(35) px-to-rem(30);
+      }
+      h2 {
+        max-width: px-to-rem(115);
+      }
+      .price {
+        max-width: px-to-rem(132);
+      }
+      .counter {
+        max-width: px-to-rem(125);
+      }
+      input {
+        font-size: px-to-rem(20);
+        max-width: px-to-rem(50);
+      }
+      button {
+        width: px-to-rem(35);
+        height: px-to-rem(35);
+
+        &::before {
+          width: px-to-rem(18);
+        }
+        &::after {
+          height: px-to-rem(18);
+        }
+      }
+    }
+  }
+}
 @media screen and (min-width: breakpoint(extra-small)) and (max-width: breakpoint(medium-max)) {
   .main {
     .decor-1 {
       right: px-to-rem(-100);
+    }
+  }
+}
+@media screen and (min-width: breakpoint(large)) {
+  .main {
+    .persons-count img {
+      width: px-to-rem(75);
     }
   }
 }
