@@ -27,9 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
       multiplier: 200,
       totalPrice: 0
     }
-    // let multiplier = 200;
-    let plusButtons = document.querySelectorAll('.plus');
-    let minusButtons = document.querySelectorAll('.minus');
 
     // --- Functions
     function _render() {
@@ -63,7 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
         field.innerHTML = orderHolder.totalPrice
       });
     }
-    plusButtons.forEach(function (button) {
+
+    // Plus click
+    document.querySelectorAll('.plus').forEach(function (button) {
       button.addEventListener('click', function () {
         let input = this.previousElementSibling.name;
 
@@ -79,7 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     });
 
-    minusButtons.forEach(function (button) {
+    // Minus click
+    document.querySelectorAll('.minus').forEach(function (button) {
       button.addEventListener('click', function () {
         let input = this.nextElementSibling.name;
 
