@@ -30,6 +30,7 @@ body {
 .main {
   margin-bottom: px-to-rem(50);
   position: relative;
+  // overflow-x: hidden;
 
   .container {
     display: flex;
@@ -421,6 +422,7 @@ body {
     position: absolute;
   }
   .decor-1 {
+    top: px-to-rem(150);
     left: px-to-rem(-120);
   }
   .decor-2 {
