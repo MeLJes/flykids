@@ -98,6 +98,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   })();
 
+  function preLoader() {
+    $('body').removeClass('loading');
+    $('body').addClass('loaded');
+
+    document.addEventListener('transitionend', function () {
+      $('.loader').remove();
+    })
+  }
 
   // Libs
   OverlayScrollbars(document.getElementsByClassName('scroll-box'), {
@@ -110,4 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
       x: 'hidden'
     }
   });
+});
+
+window.addEventListener('load', (event) => {
+  document.body.classList.remove('loading');
+  document.body.classList.add('loaded');
 });

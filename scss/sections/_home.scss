@@ -5,6 +5,30 @@ body {
   .container {
     max-width: px-to-rem(1200);
   }
+  .header,
+  .main,
+  .order-box {
+    @include tr;
+  }
+  // Loader
+  &.loading {
+    .header,
+    .main,
+    .order-box {
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+  &.loaded {
+    .header,
+    .main,
+    .order-box {
+      opacity: 1;
+      pointer-events: auto;
+      user-select: auto;
+    }
+  }
 }
 .main {
   margin-bottom: px-to-rem(50);
@@ -403,8 +427,9 @@ body {
   }
   .decor-2 {
     top: 0;
-    right: px-to-rem(-50);
+    right: 10vw;
   }
+
 }
 
 // Responsive
