@@ -24,9 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
       childrenTotal: 0,
       kidsTotal: 0,
       parentsTotal: 0,
+      multiplier: 200,
       totalPrice: 0
     }
-    let multiplier = 200;
+    // let multiplier = 200;
     let plusButton = document.querySelectorAll('.plus');
     let minusButton = document.querySelectorAll('.minus');
 
@@ -49,38 +50,26 @@ document.addEventListener('DOMContentLoaded', function () {
       _totalSums();
     };
     function _totalSums() {
-      let priceFieldChildren = document.getElementsByClassName('children-box-total');
-      let priceFieldKids = document.getElementsByClassName('kids-box-total');
-      let priceFieldParents = document.getElementsByClassName('parents-box-total');
-      let priceField = document.querySelectorAll('.totalPrice');
+      orderHolder.childrenTotal = orderHolder.childrenQuantity * 0;
+      orderHolder.kidsTotal = orderHolder.kidsQuantity * orderHolder.multiplier;
+      orderHolder.parentsTotal = orderHolder.parentsQuantity * orderHolder.multiplier;
+      orderHolder.totalPrice = orderHolder.childrenTotal + orderHolder.kidsTotal + orderHolder.parentsTotal;
 
-      priceFieldChildren[0].innerHTML = orderHolder.childrenQuantity * 0;
-      priceFieldKids[0].innerHTML = orderHolder.kidsQuantity * multiplier;
-      priceFieldParents[0].innerHTML = orderHolder.parentsQuantity * multiplier;
+      document.getElementsByClassName('children-box-total')[0].innerHTML = orderHolder.childrenTotal;
+      document.getElementsByClassName('kids-box-total')[0].innerHTML = orderHolder.kidsTotal;
+      document.getElementsByClassName('parents-box-total')[0].innerHTML = orderHolder.parentsTotal;
 
-      orderHolder.childrenTotal = Number(priceFieldChildren[0].innerHTML);
-      orderHolder.kidsTotal = Number(priceFieldKids[0].innerHTML);
-      orderHolder.parentsTotal = Number(priceFieldParents[0].innerHTML);
-
-      let price = orderHolder.childrenTotal + orderHolder.kidsTotal + orderHolder.parentsTotal;
-
-      priceField.forEach(function(field) {
-        field.innerHTML = price
+      document.querySelectorAll('.totalPrice').forEach(function(field) {
+        field.innerHTML = orderHolder.totalPrice
       });
-
-      orderHolder.totalPrice = price;
     }
     plusButton.forEach(function (button) {
       button.addEventListener('click', function () {
         let input = this.previousElementSibling;
         let inputName = input.name;
-        let currentHolderValue = orderHolder[inputName];
 
-        currentHolderValue++;
-        orderHolder[inputName] = currentHolderValue;
-
+        orderHolder[inputName]++;
         _render();
-        //input.value = currentHolderValue;
 
         let minusButton = input.previousElementSibling;
         if (input.value > 0) {
@@ -93,13 +82,9 @@ document.addEventListener('DOMContentLoaded', function () {
       button.addEventListener('click', function () {
         let input = this.nextElementSibling;
         let inputName = input.name;
-        let currentHolderValue = orderHolder[inputName];
 
-        currentHolderValue--;
-        orderHolder[inputName] = currentHolderValue;
-
+        orderHolder[inputName]--;
         _render();
-        //input.value = currentHolderValue;
 
         if (input.value == 0) {
           this.classList.add('inactive');
