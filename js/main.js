@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       kidsTotal: 0,
       parentsTotal: 0,
       multiplier: 200,
+      eventCost: 500,
       totalPrice: 0
     }
 
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
       orderHolder.childrenTotal = orderHolder.childrenQuantity * 0;
       orderHolder.kidsTotal = orderHolder.kidsQuantity * orderHolder.multiplier;
       orderHolder.parentsTotal = orderHolder.parentsQuantity * orderHolder.multiplier;
-      orderHolder.totalPrice = orderHolder.childrenTotal + orderHolder.kidsTotal + orderHolder.parentsTotal;
+      orderHolder.totalPrice = orderHolder.childrenTotal + orderHolder.kidsTotal + orderHolder.parentsTotal + orderHolder.eventCost;
 
       document.getElementsByClassName('children-box-total')[0].innerHTML = orderHolder.childrenTotal;
       document.getElementsByClassName('kids-box-total')[0].innerHTML = orderHolder.kidsTotal;

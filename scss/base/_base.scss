@@ -54,6 +54,8 @@ fieldset {
 input, textarea {
   border: none;
   border-radius: 0;
+  user-select: none;
+  pointer-events: none;
 
   -moz-appearance: textfield;
   -webkit-appearance: none;
