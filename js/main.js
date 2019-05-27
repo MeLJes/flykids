@@ -70,25 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
         orderHolder[input]++;
         _render();
 
-
-
-
-        console.log(input);
-        let inputs = document.getElementsByClassName(input);
-        console.log(inputs);
-
+        let inputs = [].slice.call(document.getElementsByClassName(input));
         for (let input in inputs) {
-          // input.previousElementSibling.classList.remove('inactive');
-          console.log(input.input);
+          if (inputs[input].value > 0) {
+            inputs[input].previousElementSibling.classList.remove('inactive');
+          }
         }
-
-
-/*
-
-        let minusButton = input.previousElementSibling;
-        if (input.value > 0) {
-          minusButton.classList.remove('inactive');
-        }*/
       })
     });
 
@@ -99,8 +86,11 @@ document.addEventListener('DOMContentLoaded', function () {
         orderHolder[input]--;
         _render();
 
-        if (input.value == 0) {
-          this.classList.add('inactive');
+        let inputs = [].slice.call(document.getElementsByClassName(input));
+        for (let input in inputs) {
+          if (inputs[input].value == 0) {
+            inputs[input].previousElementSibling.classList.add('inactive');
+          }
         }
       })
     });
