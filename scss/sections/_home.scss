@@ -654,10 +654,36 @@ body {
     }
   }
 }
-@media screen and (min-width: breakpoint(extra-small)) and (max-width: breakpoint(medium-max)) {
+@media screen and (min-width: breakpoint(zero)) and (max-width: breakpoint(medium-max)) {
   .main {
+    .container {
+      z-index: 5;
+    }
+    .decor {
+      z-index: 1;
+    }
     .decor-1 {
       right: px-to-rem(-100);
+    }
+    .decor-2 {
+      max-width: px-to-rem(200);
+
+      right: -8vw;
+    }
+  }
+}
+@media screen and (min-width: breakpoint(large)) and (max-width: breakpoint(large-max)) {
+  .main {
+    .container {
+      z-index: 5;
+    }
+    .decor {
+      z-index: 1;
+    }
+    .decor-2 {
+      max-width: px-to-rem(200);
+
+      right: -8vw;
     }
   }
 }
