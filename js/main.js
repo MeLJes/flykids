@@ -52,14 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
       let priceFieldChildren = document.getElementsByClassName('children-box-total');
       let priceFieldKids = document.getElementsByClassName('kids-box-total');
       let priceFieldParents = document.getElementsByClassName('parents-box-total');
-      let priceField = document.getElementsByClassName('totalPrice');
+      let priceField = document.querySelectorAll('.totalPrice');
 
       priceFieldChildren[0].innerHTML = orderHolder.childrenQuantity * 0;
       priceFieldKids[0].innerHTML = orderHolder.kidsQuantity * multiplier;
       priceFieldParents[0].innerHTML = orderHolder.parentsQuantity * multiplier;
-
-
-      let test = orderHolder.kidsQuantity * multiplier; // Number
 
       orderHolder.childrenTotal = Number(priceFieldChildren[0].innerHTML);
       orderHolder.kidsTotal = Number(priceFieldKids[0].innerHTML);
@@ -67,73 +64,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       let price = orderHolder.childrenTotal + orderHolder.kidsTotal + orderHolder.parentsTotal;
 
-      priceField = price;
+      priceField.forEach(function(field) {
+        field.innerHTML = price
+      });
+
       orderHolder.totalPrice = price;
-      //console.log(typeof orderHolder.parentsTotal);
-
-
-
-      /*let priceFieldChildren = document.getElementsByClassName('children-box-total')[0].innerHTML;
-      let priceFieldKids = document.getElementsByClassName('kids-box-total')[0].innerHTML;
-      let priceFieldParents = document.getElementsByClassName('parents-box-total')[0].innerHTML;
-      let priceField = document.getElementsByClassName('totalPrice')[0].innerHTML;
-
-      priceFieldChildren = orderHolder.childrenQuantity * multiplier;
-      priceFieldKids = orderHolder.kidsQuantity * multiplier;
-      priceFieldParents = orderHolder.parentsQuantity * multiplier;
-
-      /*console.log(priceFieldChildren);
-      console.log(priceFieldKids);
-      console.log(priceFieldParents);
-      console.log(priceField);
-
-      // let childrenTotal = totalPriceChildren[0].innerHTML = orderHolder.childrenQuantity * multiplier;
-      // let kidsTotal = totalPriceKids[0].innerHTML = orderHolder.kidsQuantity * multiplier;
-      // let parentsTotal = totalPriceParents[0].innerHTML = orderHolder.parentsQuantity * multiplier;
-
-      console.log(orderHolder.childrenQuantity);
-      console.log(orderHolder.kidsQuantity);
-      console.log(orderHolder.parentsQuantity);
-
-      let childrenTotal = orderHolder.childrenQuantity * multiplier;
-      let kidsTotal = orderHolder.kidsQuantity * multiplier;
-      let parentsTotal = orderHolder.parentsQuantity * multiplier;
-      let price = childrenTotal + kidsTotal + parentsTotal;
-
-      console.log(kidsTotal);
-      console.log(priceFieldKids);
-
-      priceFieldChildren = childrenTotal;
-      priceFieldKids = kidsTotal;
-      priceFieldParents = parentsTotal;
-
-      console.log(priceFieldKids);
-
-      /*console.log(priceFieldChildren);
-      console.log(priceFieldKids);
-      console.log(priceFieldParents);
-      console.log(priceField);*/
-/*
-
-      priceField = price;
-      orderHolder.totalPrice = price;
-
-      /*console.log(childrenTotal);
-      console.log(multiplier);
-      /*console.log(kidsTotal);
-      console.log(parentsTotal);*/
-
-      /*orderHolder.childrenTotal = childrenTotal;
-      orderHolder.kidsTotal = kidsTotal;
-      orderHolder.parentsTotal = parentsTotal;*/
-
-      // Set total price
-      /*orderHolder.totalPrice = orderHolder.childrenTotal + orderHolder.kidsTotal + orderHolder.parentsTotal;
-      totalPrice[0].innerHTML = orderHolder.totalPrice;
-      //console.log(orderHolder.totalPrice);
-      /*let total = totalPrice[0].innerHTML = orderHolder.childrenTotal + orderHolder.kidsTotal + orderHolder.parentsTotal;
-
-      orderHolder.totalPrice = total;*/
     }
     plusButton.forEach(function (button) {
       button.addEventListener('click', function () {
