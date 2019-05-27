@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// Helpers
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/libs/scroll";
+
+// Base styles
+@import "normalize";
+@import "base/class";
+@import "base/typography";
+@import "base/base";
+
+// ------------------
+
+// --- Home page
+@import "sections/header";
+@import "sections/home";

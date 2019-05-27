@@ -1,0 +1,74 @@
+// Global
+html {
+  font-family: $default-font;
+  font-size: 100%;
+  font-weight: normal;
+}
+body {
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+p, span {
+  line-height: 1;
+}
+h1, h2, h3 {
+  color: color(primary);
+}
+h1 {
+  font-size: px-to-rem(28);
+  font-weight: weight(black);
+  text-align: center;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: px-to-rem(20);
+  font-weight: weight(extra-bold);
+}
+h3 {
+  font-size: px-to-rem(23);
+  font-weight: weight(medium);
+}
+h4 {
+  font-size: px-to-rem(14);
+  font-weight: weight(medium);
+}
+h5 {
+  font-size: px-to-rem(16);
+  font-weight: weight(medium);
+}
+
+// Responsive
+@media screen and (min-width: breakpoint(zero)) and (max-width: breakpoint(zero-max)) {
+  h1 {
+    font-size: px-to-rem(20);
+  }
+  h2 {
+    font-size: px-to-rem(16);
+  }
+  h3 {
+    font-size: px-to-rem(18);
+  }
+}
+@media screen and (min-width: breakpoint(extra-small)) and (max-width: breakpoint(extra-small-max)) {
+  h1 {
+    font-size: px-to-rem(22);
+  }
+  h2 {
+    font-size: px-to-rem(18);
+  }
+  h3 {
+    font-size: px-to-rem(20);
+  }
+}
+@media screen and (min-width: breakpoint(small)) and (max-width: breakpoint(small-max)) {
+  h1 {
+    font-size: px-to-rem(24);
+  }
+  h2 {
+    font-size: px-to-rem(16);
+  }
+  h3 {
+    font-size: px-to-rem(18);
+  }
+}

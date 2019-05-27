@@ -1,0 +1,74 @@
+// Fonts
+$default-font: 'Montserrat', sans-serif;
+$secondary-font: 'Times New Roman', serif;
+
+// Weights
+$weights: (
+  light: 300,
+  regular: normal,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  black: 900
+);
+
+// Colors
+$colors: (
+  // --- Main
+  default: #000000,
+  primary: #E5097F,
+  secondary: #b2b2b2,
+
+  // --- Additional
+  white: #ffffff,
+  black: #000000,
+  gray: #c4c4c4,
+  sub-gray: #a4a4a4,
+
+  // --- Alerts
+  success: #b1d845,
+  warning: #ffeaa7,
+  error: #e41c1c
+);
+
+// Z-index
+$z-layers: (
+  // --- Main
+  back: -1,
+  base: 0,
+  default: 1,
+
+  // --- Additional
+  overlay: 999,
+  extended: 9999
+);
+
+// Breakpoints
+$breakpoints: (
+  zero: 0,
+  zero-max: 479,
+  extra-small: 480,
+  extra-small-max: 767,
+  small: 768,
+  small-max: 991,
+  medium: 992,
+  medium-max: 1199,
+  large: 1200,
+  large-max: 1599,
+  extra-large: 1600,
+  extra-large-max: 1999,
+  huge: 2000
+);
+
+// Container
+$container-max: 1200;
+$container-padding: 30;
+$container-padding-md: 20;
+
+// Default values
+$default-size: 16;
+$default-radius: 5;
+
+// Other
+$box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.1);

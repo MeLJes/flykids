@@ -1,0 +1,83 @@
+html, body {
+  height: 100%;
+}
+html {
+  overflow-y: scroll;
+}
+html, *:not(img) {
+  @extend %box-sizing;
+}
+body {
+  color: color(default);
+  padding: 0 !important;
+  position: relative;
+
+  @extend %df-c;
+}
+*:not(img) {
+  outline: none;
+  margin: 0;
+  padding: 0;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+section {
+  position: relative;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+svg {
+  width: 100%;
+  height: 100%;
+}
+img, object, embed {
+  max-width: 100%;
+}
+a,
+a:hover,
+a:active,
+a:focus,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+
+  @include tr(color);
+}
+fieldset {
+  border: none;
+}
+input, textarea {
+  border: none;
+  border-radius: 0;
+
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+
+  @include tr();
+}
+input[type="search"],
+input[type=number] {
+  background: none;
+  border: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include tr(color);
+}

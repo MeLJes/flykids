@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fly kids</title>
+
+  <link rel="icon" href="icons/favicon.png" type="images/x-icon" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800,900&display=swap&subset=cyrillic-ext">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.7.1/css/OverlayScrollbars.min.css" />
+  <!-- <link rel="stylesheet" href="libs/css/os-theme-round-light.css" /> -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+
+      <div class="logo">
+        <a href="">
+          <img src="images/logo.svg" alt="Fly kids logo" class="logo-default" />
+          <img src="images/logo-m.png" alt="Fly kids logo mobile" class="logo-mobile" />
+        </a>
+      </div><!-- .logo -->
+
+      <div class="page-title">
+        <h1>Fly birthday</h1>
+      </div><!-- .page-title -->
+
+      <div class="other">
+
+      </div><!-- .other -->
+
+    </div><!-- .container -->
+  </header><!-- .header -->
+
+  <section class="main">
+    <div class="container">
+
+      <div class="persons-count">
+        <h3>Количество гостей</h3>
+
+        <div class="items">
+          <div class="item">
+            <img src="images/baby.svg" alt="Fly kids - Icon" />
+
+            <h2>Дети до 1 года</h2>
+
+            <div class="price">
+              Бесплатно <br> 0₴
+            </div><!-- .price -->
+
+            <div class="counter">
+              <button type="button" class="minus inactive">
+              </button><!-- .minus -->
+
+              <input type="number" name="childrenQuantity" value="0" class="childrenQuantity"><!-- .quantity -->
+
+              <button type="button" class="plus">
+              </button><!-- .plus -->
+            </div><!-- .counter -->
+          </div><!-- .item -->
+
+          <div class="item">
+            <img src="images/girl.svg" alt="Fly kids - Icon" />
+
+            <h2>Дети 1 - 16 лет</h2>
+
+            <div class="price">
+              Будни - 170₴ <br>
+              Выходные - 200₴
+            </div><!-- .price -->
+
+            <div class="counter">
+              <button type="button" class="minus inactive">
+              </button><!-- .minus -->
+
+              <input type="number" name="kidsQuantity" value="0" class="kidsQuantity"><!-- .quantity -->
+
+              <button type="button" class="plus">
+              </button><!-- .plus -->
+            </div><!-- .counter -->
+          </div><!-- .item -->
+
+          <div class="item">
+            <img src="images/woman.svg" alt="Fly kids - Icon" />
+
+            <h2>Взрослые</h2>
+
+            <div class="price">
+              Будни - 170₴ <br>
+              Выходные - 200₴
+            </div><!-- .price -->
+
+            <div class="counter">
+              <button type="button" class="minus inactive">
+              </button><!-- .minus -->
+
+              <input type="number" name="parentsQuantity" value="0" class="parentsQuantity"><!-- .quantity -->
+
+              <button type="button" class="plus">
+              </button><!-- .plus -->
+            </div><!-- .counter -->
+          </div><!-- .item -->
+
+        </div><!-- .items -->
+      </div><!-- .persons-count -->
+
+      <div class="order-box" id="order">
+        <h3>Ваш заказ</h3>
+
+        <div class="wrapper">
+          <div class="holder place-time">
+            <div class="place">
+              <span class="complex">ТРЦ "Арсен"</span>
+              <span class="city">г.Львов</span>
+            </div><!-- .place -->
+
+            <div class="time">
+              <span class="date">25.05.2019</span>
+              <span class="time">10.00 - 15.00</span>
+            </div><!-- .time -->
+          </div><!-- .place-time -->
+
+            <div class="scroll-box">
+              <div class="holder event-type">
+                <span class="tips type">Тематическая комната</span><!-- .event-type -->
+
+                <div class="name-price">
+                  <h2>Алиса <br> в стране чудес</h2>
+
+                  <span class="price">500₴</span>
+                </div><!-- .name-price -->
+              </div><!-- .event-type -->
+
+              <div class="holder people-count">
+                <span class="tips people">Количество гостей</span><!-- .event-type -->
+
+                <div class="items">
+                  <div class="item">
+                    <h4>Дети до 1 г.</h4>
+
+                    <div class="counter">
+                      <button type="button" class="minus inactive"></button><!-- .minus -->
+
+                      <input type="number" name="childrenQuantity" value="0" class="childrenQuantity"><!-- .quantity -->
+
+                      <button type="button" class="plus"></button><!-- .plus -->
+                    </div><!-- .counter -->
+
+                    <span class="tips price-tip">Бесплатно</span><!-- .price-tip -->
+
+                    <span class="price">
+                      <span class="children-box-total">0</span>₴ <!-- .quantity -->
+                    </span>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <h4>Дети.</h4>
+
+                    <div class="counter">
+                      <button type="button" class="minus inactive"></button><!-- .minus -->
+
+                      <input type="number" name="kidsQuantity" value="0" class="kidsQuantity"><!-- .quantity -->
+
+                      <button type="button" class="plus"></button><!-- .plus -->
+                    </div><!-- .counter -->
+
+                    <span class="tips price-tip">
+                      x 200₴ / чел.
+                    </span><!-- .price-tip -->
+
+                    <span class="price">
+                      <span class="kids-box-total">0</span>₴ <!-- .quantity -->
+                    </span>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <h4>Взрослые</h4>
+
+                    <div class="counter">
+                      <button type="button" class="minus inactive"></button><!-- .minus -->
+
+                      <input type="number" name="parentsQuantity" value="0" class="parentsQuantity"><!-- .quantity -->
+
+                      <button type="button" class="plus"></button><!-- .plus -->
+                    </div><!-- .counter -->
+
+                    <span class="tips price-tip">
+                      x 200₴ / чел.
+                    </span><!-- .price-tip -->
+
+                    <span class="price">
+                      <span class="parents-box-total">0</span>₴ <!-- .quantity -->
+                    </span>
+                  </div><!-- .item -->
+
+                </div><!-- .items -->
+              </div><!-- .people-count -->
+            </div><!-- .scroll-box -->
+
+          <div class="holder total">
+            <div class="tips">
+              <span>Минимальный заказ</span>
+              <span>2000₴</span>
+            </div><!-- .tips-->
+
+            <div>
+              <span class="name">Сумма к оплате</span>
+              <span class="price-holder">
+                <span class="total-price totalPrice">0</span>
+                <span class="currency">₴</span>
+              </span>
+            </div>
+          </div><!-- .total -->
+
+          <img src="icons/box-bottom.svg" alt="Fly kids - Decor" class="order-box-decor" />
+        </div><!-- .wrapper -->
+      </div><!-- .order -->
+
+      <div class="order-box-mobile">
+        <h5>Итого:
+          <span class="total-price totalPrice">0</span>
+          <span class="currency">₴</span>
+        </h5>
+
+        <button type="button" class="order-box-toggle">
+          <img src="icons/up.svg" alt="Fly kids - Icon" class="inactive" />
+          <img src="icons/close.svg" alt="Fly kids - Icon" class="active" />
+        </button><!-- .order-box-toggle -->
+      </div><!-- .order-box-mobile -->
+    </div><!-- .container -->
+  </section><!-- .main -->
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.7.1/js/OverlayScrollbars.min.js"></script>
+  <!-- Main -->
+  <script src="js/main.js"></script>
+</body>
+</html>

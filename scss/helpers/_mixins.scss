@@ -1,0 +1,103 @@
+// Transitions
+@mixin tr($property: all, $duration: 0.2, $timing-function: ease-in-out) {
+  transition: $property #{$duration}s $timing-function;
+}
+
+// Set font size & weight
+@mixin font-prop($weight, $size: $default-size) {
+  font-size: calc-em($size);
+  font-weight: weight($weight);
+}
+
+// Change input placeholder style
+@mixin placeholder($color: color(default), $font-size: px-to-em(16), $font-weight: weight(regular)) {
+  ::-webkit-input-placeholder { color: $color; font-size: $font-size; font-weight: $font-weight; }
+  ::-moz-placeholder          { color: $color; font-size: $font-size; font-weight: $font-weight; }
+  :-moz-placeholder           { color: $color; font-size: $font-size; font-weight: $font-weight; }
+  :-ms-input-placeholder      { color: $color; font-size: $font-size; font-weight: $font-weight; }
+}
+
+// Remove placeholder on click
+@mixin placeholder-remove($color: transparent) {
+  input:focus::-webkit-input-placeholder { color: $color; }
+  input:focus::-moz-placeholder          { color: $color; }
+  input:focus:-moz-placeholder           { color: $color; }
+  input:focus:-ms-input-placeholder      { color: $color; }
+}
+
+// Width & Height are equal
+@mixin size($width, $unit: px, $height: $width) {
+  width: #{$width}$unit;
+  height: #{$height}$unit;
+}
+
+// Preset max width & height
+@mixin size-max($width, $max-width: auto, $unit: px, $height: $width, $max-height: $max-width) {
+  width: #{$width}$unit;
+  max-width: #{$max-width}$unit;
+  height: #{$height}$unit;
+  max-height: #{$max-height}$unit;
+}
+
+// Set 16:9 ratio (Sixteen to Nine) - Landscape
+@mixin ratio-sn-land($width, $unit: px) {
+  width: #{$width}$unit;
+  height: #{($width / 1.77777777778)}$unit;
+}
+
+// Set 16:9 ratio (Sixteen to Nine) - Portrait
+@mixin ratio-sn-port($width, $unit: px) {
+  width: #{$width}$unit;
+  height: #{($width * 1.77777777778)}$unit;
+}
+
+// Set 99:70 ratio (A4) - Landscape
+@mixin ratio-a4-land($width, $unit: px) {
+  width: #{$width}$unit;
+  height: #{($width / 1.41428571429)}$unit;
+}
+
+// Set 99:70 ratio (A4) - Portrait
+@mixin ratio-a4-port($width, $unit: px) {
+  width: #{$width}$unit;
+  height: #{($width * 1.41428571429)}$unit;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin input-autofill {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,0.01) inset;
+    box-shadow: 0 0 0 1000px rgba(255,255,255,0.01) inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@mixin scrollbar($color) {
+  &::-webkit-scrollbar-thumb {
+    background: $color;
+    border-radius: px-to-rem(10);
+    width: px-to-rem(10);
+    height: px-to-rem(10);
+  }
+  &::-webkit-scrollbar {
+    background: color(light-gray);
+    width: px-to-rem(3);
+    height: px-to-rem(3);
+  }
+}

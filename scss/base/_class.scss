@@ -1,0 +1,106 @@
+// -------------------- Default
+.box-sizing, %box-sizing { box-sizing: border-box; }
+.backspace, %backspace { backface-visibility: hidden; }
+.sf, %sf { flex: 1; }
+
+
+// -------------------- Base
+.container,
+%container {
+  width: 100%;
+  height: inherit;
+  margin: 0 auto;
+  padding: 0 px-to-rem($container-padding);
+  position: relative;
+}
+.link-block,
+%link-block {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.no-wrap,
+%no-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vp,
+%vp {
+  padding-bottom: 56.25%;
+  height: 0;
+  position: relative;
+
+  iframe,
+  img {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+// --- User select
+.us-none, %us-none { user-select: none; }
+.us-auto, %us-auto { user-select: auto; }
+.pe-none, %pe-none { pointer-events: none; }
+.pe-auto, %pe-auto { pointer-events: auto; }
+
+// --- Float
+.cb, %cb { clear: both; }
+.fl, %fl { float: left; }
+.fr, %fr { float: right; }
+
+// --- Text align
+.up, %up { text-transform: uppercase; }
+.tl, %tl { text-align: left; }
+.tc, %tc { text-align: center; }
+.tr, %tr { text-align: right; }
+
+// --- Centering
+.centering,
+%centering {
+  transform: translate(-50%, -50%);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.df-centering,
+%df-centering {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// -------------------- Display
+// --- Default
+.dn, %dn { display: none !important; }
+.db, %db { display: block; }
+.dib, %dib { display: inline-block;  vertical-align: top; }
+
+// --- Flex
+.df, %df { display: flex; }
+.df-c, %df-c { display: flex; flex-direction: column; }
+.dif, %dif { display: inline-flex; }
+.dif-c, %dif-c { display: inline-flex; flex-direction: column; }
+.df-wrap, %df-wrap { flex-wrap: wrap; }
+
+// ------ Justify content
+.jc-center, %jc-center { justify-content: center; }
+.jc-space-around, %jc-space-around { justify-content: space-around; }
+.jc-space-between, %jc-space-between { justify-content: space-between; }
+.jc-flex-start, %jc-flex-start { justify-content: flex-start; }
+.jc-flex-end, %jc-flex-end { justify-content: flex-end; }
+
+// ------ Align items
+.ai-baseline, %ai-baseline { align-items: baseline; }
+.ai-center, %ai-center { align-items: center; }
+.ai-flex-start, %ai-flex-start { align-items: flex-start; }
+.ai-flex-end, %ai-flex-end { align-items: flex-end; }
+.ai-stretch, %ai-stretch { align-items: stretch; }

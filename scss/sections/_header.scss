@@ -1,0 +1,39 @@
+.header {
+  background: color(white);
+  box-shadow: $box-shadow;
+  height: px-to-rem(80);
+  margin-bottom: px-to-rem(15);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > div {
+      flex: 1;
+    }
+  }
+  .logo-mobile {
+    display: none;
+  }
+}
+
+// Responsive
+@media screen and (min-width: breakpoint(zero)) and (max-width: breakpoint(extra-small-max)) {
+  .header {
+    margin-bottom: px-to-rem(35);
+
+    .logo-mobile {
+      display: block;
+      max-height: px-to-rem(55);
+    }
+    .logo-default {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: breakpoint(small)) and (max-width: breakpoint(small-max)) {
+  .header {
+    margin-bottom: px-to-rem(35);
+  }
+}
